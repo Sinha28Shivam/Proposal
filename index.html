@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposal Card</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      padding: 25px;
+      width: 350px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .heart {
+      color: red;
+      font-size: 50px;
+      animation: beat 1s infinite;
+    }
+    @keyframes beat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+    }
+    h1 {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+      color: #555;
+    }
+    button {
+      background: #ff6f61;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 12px 25px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    button:hover {
+      background: #e55a50;
+      transform: scale(1.1);
+    }
+    .response {
+      font-size: 24px;
+      color: #fff;
+      text-align: center;
+      background: rgba(255, 111, 97, 0.9);
+      border-radius: 20px;
+      padding: 20px;
+      animation: fadeIn 1s forwards, popIn 0.5s 0.5s forwards;
+      display: none;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes popIn {
+      0% {
+        transform: scale(0.8);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="card">
+    <div class="heart">❤️</div>
+    <h1>Will You Marry Me?</h1>
+    <p>You are my everything. Let’s make forever together.</p>
+    <button id="yesButton">Yes, I Will!</button>
+  </div>
+  <div id="response" class="response">You just made my heart burst with joy! 🌟❤️ <br> Contact Me: 9546449288</div>
+
+  <script>
+    const yesButton = document.getElementById('yesButton');
+    const card = document.getElementById('card');
+    const response = document.getElementById('response');
+
+    yesButton.addEventListener('click', () => {
+      // Clear the card content
+      card.style.display = 'none';
+      // Show the response message
+      response.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
